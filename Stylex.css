@@ -1,0 +1,137 @@
+<style>
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+  html,body {
+	height:100%;
+    font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(to left, rgb(173, 216, 230), rgb(255, 105, 180));
+    
+  }
+
+  .wrapper {
+    display: flex;
+    height: 100vh;  /* Ekranın tüm yüksekliği */
+  }
+
+/* Sidebar menü stilleri */
+  .sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+	
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .sidebar a:hover {
+    background-color: #add8e6;
+    color: #000;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	font-style: italic;
+  }
+  .main-content p {
+  font-size: 18px;            /* Yazı boyutu */
+  color: #555;                /* Yazı rengi */
+  line-height: 1.8;           /* Satır aralığı */
+}
+  
+  
+/* Kronometre kutusu */
+  .kronometre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    background: #000;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 350px;
+	max-height: 275px;
+    width: 100%;
+  }
+ 
+
+  h1 {
+    color: rgb(0, 0, 255);
+  }
+
+  .timer {
+    font-size: 6rem;
+    margin: 0;
+    color: white;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Butonlara özel renkler */
+  #startBtn {
+    background-color: #28a745; /* Yeşil */
+    color: white;
+  }
+
+  #pauseBtn {
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+  }
+
+  #resetBtn {
+    background-color: #ffc107; /* Sarı */
+    color: black;
+  }
+
+  button:hover {
+    opacity: 0.85;
+    transition: 0.3s;
+  }
+
+  /* Mobil cihazlar için uyumlu yazı ve buton boyutu */
+  @media (max-width: 600px) {
+    . timer {
+      font-size: 2rem;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+ </style>
