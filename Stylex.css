@@ -1,3 +1,8 @@
+/* Copyright (c) 2025 Zeliha Özer. All rights reserved.
+ Bu dosya, Kronometre için yazılmıştır.*/
+
+
+
 <style>
  *{
   margin: 0;
@@ -7,25 +12,31 @@
   
   html,body {
 	height:100%;
-    font-family: 'Segoe UI', sans-serif;
-	background: linear-gradient(to left, rgb(173, 216, 230), rgb(255, 105, 180));
+    font-family: 'Poppins', sans-serif;
+	/*background: linear-gradient(to left, rgb(173, 216, 230), rgb(255, 105, 180)); */
+    background: linear-gradient(to right, #f8bbd0, #bbdefb);
+}
+
     
-  }
+  
+  
+
 
   .wrapper {
     display: flex;
-    height: 100vh;  /* Ekranın tüm yüksekliği */
+	width: 100%;
+    flex-direction: row;
+	 min-height: 100vh; /* Sayfa tam yüksekliği */
+  
   }
 
 /* Sidebar menü stilleri */
   .sidebar {
     width: 200px;
-    background-color: #f0f0f0;
+    background-color: #E6E6FA;
+	 overflow-y: auto; /* Dikey kaydırma */
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    
 	
   }
 
@@ -39,10 +50,11 @@
     padding: 10px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
+	width: 100%;
   }
 
   .sidebar a:hover {
-    background-color: #add8e6;
+    background-color: #FF0000;        /*#F6E2B3; */
     color: #000;
   }
 
@@ -51,30 +63,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;  /* Kronometre yukarıdan başlasın */
+	 padding: 40px 20px;    
 	font-style: italic;
   }
   .main-content p {
-  font-size: 18px;            /* Yazı boyutu */
-  color: #555;                /* Yazı rengi */
-  line-height: 1.8;           /* Satır aralığı */
+     font-size: 18px;            /* Yazı boyutu */
+     color: #555;                /* Yazı rengi */
+     line-height: 1.8;           /* Satır aralığı */
 }
   
   
 /* Kronometre kutusu */
   .kronometre {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+    flex-direction: column; /* İçeriği dikey sırala */
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    background: #000;
     padding: 30px;
-    border-radius: 15px;
+    background: #000;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    max-width: 350px;
-	max-height: 275px;
-    width: 100%;
+    max-width: 400px;
+	height: 300px;
+	width: 100%;
+	text-align: center;
   }
  
 
@@ -95,6 +108,7 @@
   }
 
   button {
+	transform: scale(1);
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
@@ -121,7 +135,9 @@
   button:hover {
     opacity: 0.85;
     transition: 0.3s;
+	transform: scale(1.05);
   }
+ 
 
   /* Mobil cihazlar için uyumlu yazı ve buton boyutu */
   @media (max-width: 600px) {
@@ -129,9 +145,6 @@
       font-size: 2rem;
     }
 
-    button {
-      padding: 10px;
-      font-size: 0.9rem;
-    }
+   
   }
  </style>

@@ -1,3 +1,5 @@
+// Copyright (c) 2025 Zeliha Özer. All rights reserved.
+// Bu dosya, Kronometre için yazılmıştır.
 
 // Zamanlayıcıyı başlatan fonksiyon
     let [seconds, minutes, hours] = [0, 0, 0];
