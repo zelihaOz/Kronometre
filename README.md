@@ -1,4 +1,4 @@
-# Kronometre Web Uygulaması – v0.1.0 🚧
+# Kronometre Web Uygulaması – v0.2.0 🚧
 
 Bu proje, bir **kronometre web uygulaması**dır. Sayfa üzerinde merkezi olarak konumlandırılmış bir kronometre bulunur. Ayrıca sayfanın sol tarafında, ileride eklenecek özellikler ve sayfalara yönlendirme sağlayacak bir **yan menü (sidebar)** yer almaktadır.
 > Şu an proje **erken geliştirme aşamasındadır**. Menüdeki bağlantılar henüz aktif değildir ve yalnızca kronometre işlevseldir.
