@@ -9,7 +9,7 @@ Bu proje, bir **kronometre web uygulaması**dır. Sayfa üzerinde merkezi olarak
 
 Projenin şu anki versiyon GitHub Pages üzerinden canlı olarak görülebilir:
 
-👉 [v0.1.0](https://zelihaoz.github.io/Kronometre/)
+👉 [v0.2.0](https://zelihaoz.github.io/Kronometre/)
 
 > Yeni özellikler geliştikçe bu bağlantı üzerinden güncel sürümler yayımlanacaktır.
 
