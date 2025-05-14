@@ -8,43 +8,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
 }
   
   html,body {
 	height:100%;
     font-family: 'Poppins', sans-serif;
 	/*background: linear-gradient(to left, rgb(173, 216, 230), rgb(255, 105, 180)); */
-    background: linear-gradient(to right, #f8bbd0, #bbdefb);
-}
+    background: linear-gradient(to right, #f8bbd0, #bbdefb); 
+	/* Tüm cihazlarda varsayılan olarak kaydırma çubuğu görünsün */
+    /*-ms-overflow-style: auto;
+    scrollbar-width: auto; */
+	
+  }  
+
 
     
-  
-  
-
 
   .wrapper {
     display: flex;
+	justify-content: flex-start; /* sola yasla */
 	width: 100%;
     flex-direction: row;
-	 min-height: 100vh; /* Sayfa tam yüksekliği */
+	min-height: 100vh; /* Sayfa tam yüksekliği */
   
   }
 
-/* Sidebar menü stilleri */
-  .sidebar {
-    width: 200px;
-    background-color: #E6E6FA;
-	 overflow-y: auto; /* Dikey kaydırma */
-    padding: 20px;
-    
-	
-  }
-
-  .sidebar a {
+.side-menu a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     display: block;
     padding: 10px;
@@ -52,11 +48,55 @@
     transition: background-color 0.3s ease;
 	width: 100%;
   }
+  
+  .menu-icon {
+    /*display: none; */
+    background-color:none; /*#333;*/
+    color:white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  /*display: none; /* Mobilde görünsün, masaüstünde gizle */
+}
 
-  .sidebar a:hover {
-    background-color: #FF0000;        /*#F6E2B3; */
-    color: #000;
-  }
+
+.side-menu a:hover {
+   background-color: #5DADE2;;        /*#F6E2B3; */
+   /*max-width: 100vh; */
+  } 
+
+.side-menu {
+  
+  width:flex;
+  background: #e5e5ff;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: none; /* Başta gizli */
+  min-height: 30vh; /* Sayfa tam yüksekliği */
+  background: linear-gradient(to right, #f8bbd0, #bbdefb);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  padding: 8px 0;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
 
   .main-content {
     flex: 1;
@@ -64,7 +104,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;  /* Kronometre yukarıdan başlasın */
-	 padding: 40px 20px;    
+	 /*padding: 10px 20px; */
+	padding-top:10px; 
 	font-style: italic;
   }
   .main-content p {
@@ -75,20 +116,38 @@
   
   
 /* Kronometre kutusu */
-  .kronometre {
+ .timer-container {
 	display: flex;
     flex-direction: column; /* İçeriği dikey sırala */
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 25px 5px;
+	padding-top: 10px;
+    padding-bottom: 20px;
     background: #000;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    max-width: 400px;
+    max-width: 500px;
 	height: 300px;
 	width: 100%;
 	text-align: center;
+	line-height: 1.2;
+	margin-bottom: 10px; /*Alt tarafına 50 piksel boşluk ekler */
+
   }
+/*.timer container {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem; /* mobilde büyük ama orantılı */
+ /* background-color: #111;
+  color: #fff;
+  border-radius: 10px;
+}*/
+  
+  
  
 
   h1 {
@@ -104,16 +163,18 @@
   .buttons {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  /* Taşma olursa alta geçsin */
+	justify-content: center;
   }
 
-  button {
+  .buttons button {
 	transform: scale(1);
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+	min-width: 80px;
   }
 
   /* Butonlara özel renkler */
@@ -137,14 +198,166 @@
     transition: 0.3s;
 	transform: scale(1.05);
   }
- 
 
-  /* Mobil cihazlar için uyumlu yazı ve buton boyutu */
-  @media (max-width: 600px) {
-    . timer {
-      font-size: 2rem;
+  
+ .kayit-container {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kayit-container h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: red; /*...*/
+  background: #000  /*..*/
+}
+
+ .kayit-listesi {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kayit-listesi li {
+  background-color: #000;     /*#fff;*/
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 18px;
+  color:#FFFF00; /*#39FF14;     /*#fff #000;*/
+  border-left: 4px solid #4caf50;
+  transition: background-color 0.3s ease;
+}
+
+.kayit-listesi li:hover {
+  background-color:#f1f1f1;
+}
+
+ /*.temizle-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #5555ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.temizle-btn:hover {
+  background-color: #5DADE2;
+  color:white;
+}*/
+
+footer {
+      background: background: linear-gradient(to right, #f8bbd0, #bbdefb);   /*#222*/
+      color:white;
+      text-align: center;
+      padding: 15px 0;
+      position: static;  /*static ile herzaman sayfa sonunda kalır*/
+      width: 100%;
+      bottom: 0;
     }
 
-   
+
+
+
+  
+  /* Mobil görünüm için */
+@media (max-width: 768px) {
+	body {
+    overflow-y: hidden;  /* Dikey kaydırmayı kapatır */
+    /*overflow-y: auto; /* Dikeyde içerik uzuyorsa kaydırılabilir kalsın */
+	-ms-overflow-style: none;     /* IE ve Edge */
+     scrollbar-width: none;        /* Firefox */
+	 display: block;
+	 place-items: center; /* Hem yatay hem dikey ortalama */
+    }
+  body::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
   }
+  html, body {
+	height  : 100%;
+    background: #000 !important; /*kesin siyah */
+    color: #fff; /* Yazı rengi beyaz */
+  }
+	
+  .menu-icon {
+    display: block;
+  }
+
+  .side-menu {
+	display: none; /*mobilde gizlensin*/
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 1000;
+	background:#00CED1;
+	color:blue;
+	/*width:100%;
+	height:100%;*/
+  }
+  
+ /* .side-menu {
+  width: 100%;           /* Ekran genişliği kadar */
+  /*display: flex;         /* Yatay dizilim için */
+  /*flex-direction: row;   /* Yatay sırala */
+ /* justify-content: space-around;  /* Menüleri yay */
+ /* align-items: center;
+  /*position: relative;    /* Sayfanın üst kısmına */
+  /*top: 0;
+  left: 0;
+  height: 50px;          /* Menü yüksekliği */
+ /* padding: 10px;
+  background: linear-gradient(to right, #f8bbd0, #bbdefb);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 999;
+}*/
+
+  
+  .side-menu.active {
+  display: block;
+  }
+  .side-menü a {
+	color:white;
+  } 
+
+ 
+  .timer-container {
+	 margin-right: auto; 
+	 margin-left: 20px;  /* Kutuyu biraz sola kaydırır */
+     padding:25px 5px;
+   /* width: 80vw;        /* Genişliği ekranın %90'ı kadar yap */
+   /* height: 50vh;       /* Yüksekliği ekranın %50'si kadar yap */
+    
+  }
+
+  .timer {
+    font-size: 1.5rem;     /* Mobilde daha büyük font */
+	padding:15px;
+  }
+
+  .buttons button {
+    font-size: 1.2rem;   /* Buton yazılarını büyüt */
+    padding: 12px 20px;
+    width: 80px;         /* Buton genişliği */
+  }	
+  html, body {
+	height  : 100%;
+    background: #000 !important; /*kesin siyah */
+    color: #fff; /* Yazı rengi beyaz */
+  }
+  .buttons button {
+    flex: 1 1 45%; /* Mobilde 2'li sıraya düşer */
+  }
+  
+)
+  
+
+  
  </style>

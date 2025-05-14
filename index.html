@@ -14,31 +14,70 @@
 </head>
 
 <body>
-  
+<div class="firstrow">
  <div class="wrapper">
 <!-- Sol Menü -->
-  <div class="sidebar">
+  <!--<div class="sidebar">
     <a href="index.html">Ana Sayfa</a>
     <a href="#kronometre">Geri Sayım</a>
     <a href="#ayarlar">Dünya Saatleri</a>
     <a href="#iletisim">İletişim</a>
-  </div>
+  </div>  -->
+  
+<!-- Menü simgesi -->
+<div class="menu-icon" onclick="toggleMenu()"><b><font color="white">☰ Anasayfa</font></b></div>
+
+<!-- Açılır menü -->
+<nav id="sideMenu" class="side-menu">
+  <ul>
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="#">Geri Sayım</a></li>
+    <li><a href="#">Dünya Saatleri</a></li>
+    <li><a href="#">İletişim</a></li>
+  </ul>
+</nav>
 
   <!-- Ana İçerik -->
   <div class="main-content">
-    <div class="kronometre">
-  <h1><font color=#fff><i>Kronometre</i></font></h1>
+    <div class="timer-container">
+   <h1><font color=#fff><i>Kronometre</i></font></h1>
       <div class="timer" id="timerDisplay">00:00:00</div>
       <div class="buttons">
          <button id="startBtn" onclick="startTimer()">Başlat</button>
-         <button id="pauseBtn" onclick="pauseTimer()">Durdur</button>
+         <button id="pauseBtn" onclick="pauseTimer(); kaydetSure()">Durdur</button>
          <button id="resetBtn" onclick="resetTimer()">Sıfırla</button>
+		 <button onclick="temizleGecmis()" class="temizle-btn">Kayıtları Temizle</button>
       </div>
     </div>
-   </div>	
+	<p></p>
+    <!-- kaydedilen süreler burayada gelebilir kronometre kutusunun altına-->
+  </div>	
+  <div class="metin">
+	<ul id="gecmisSureler" class="kayit-listesi"></ul>
+  </div>	
+ </div> <!--1.satıra ait div-->
+ 
+ <div class="secondrow"><h1>.</h1></div>
+       
+ 
  
   <script src="script.js"></script>
-  
  
+ <!--<footer class="footer">
+  <div class="footer-content">
+    <img src="logo.png" alt="Logo" class="footer-logo">
+    <p>© 2025 Zeliha Özer | Tüm hakları saklıdır.</p>
+    <div class="footer-links">
+      <a href="mailto:zeliha@example.com">İletişim</a>
+      <a href="https://github.com/zelihaOz" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>  -->
+ 
+<footer>
+  <p>&copy; 2025 Tüm hakları saklıdır. Tasarım ve geliştirme: Zeliha Özer</p>
+</footer>
+
+
 </body>
 </html>
