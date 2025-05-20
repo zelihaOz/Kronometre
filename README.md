@@ -17,15 +17,16 @@ Projenin şu anki versiyon GitHub Pages üzerinden canlı olarak görülebilir:
 
 ## 🚧 Mevcut Durum
 
+- ✅ Menü çalışıyor
+- ✅ “Dünya Saatleri” sayfası eklendi
+- ✅ Bilgilendirme içeriği genişletildi
 - ✅ Kronometre çalışıyor  
-- ☑️ Sol menü yerleştirildi (henüz işlevsel değil)  
 - ⏳ Ek sayfalar ve içerikler yapım aşamasında  
 
 ---
 
 ## 📌 Planlanan Özellikler
 
-- [ ] Menüdeki bağlantılarla farklı zamanlayıcı modları (örn. geri sayım,pomodoro)  
-- [ ] Dünya Saatleri sayfası  
+- [ ] Menüdeki bağlantılarla farklı zamanlayıcı modları (örn. geri sayım,pomodoro)   
 - [ ] Işık/Karanlık tema desteği  
 - [ ] Sesli bildirimler  
