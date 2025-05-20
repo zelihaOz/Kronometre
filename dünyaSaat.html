@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dünya Saatleri</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #f8bbd0);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .bolum {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .saat {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .saat {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- ÜSTTEKİ BÖLÜM: SAATLER -->
+  <div class="bolum">
+    <h2>🌍 Dünya Saatleri</h2>
+    <div class="saat" id="newyork">New York: </div>
+    <div class="saat" id="londra">Londra: </div>
+    <div class="saat" id="tokyo">Tokyo: </div>
+    <div class="saat" id="istanbul">İstanbul: </div>
+  </div>
+  
+  <!-- ALTAKİ BÖLÜM: METİN -->
+  <div class="bolum">
+    <h2>Bilgilendirme</h2>
+  <p>Bu sayfa, farklı kıtalar ve şehirlerdeki saatleri canlı olarak göstermek için hazırlanmıştır.  İstanbul UTC+3 saat dilimindedir.</p>
+
+  <p><strong>UTC (Coordinated Universal Time)</strong>, dünya çapında kullanılan ana zaman standardıdır. Tüm şehir saatleri UTC'ye göre hesaplanır.</p>
+
+  <p><strong>Yaz Saati Uygulaması</strong> bazı ülkelerde geçerli olmayabilir. Bu nedenle bazı saat farkları mevsime göre değişebilir.</p>
+
+  <p>Bu sistem <em>tarayıcınızın</em> saat ve zaman dilimi desteğine bağlı olarak çalışır. Eski tarayıcılar veya bazı mobil cihazlar, saatleri yanlış gösterebilir.</p>
+  
+   
+  
+</div>
+  </div>
+  
+
+  <script>
+    function getTimeString(timeZone) {
+      try {
+        const now = new Date();
+        return new Intl.DateTimeFormat('tr-TR', {
+          timeZone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        }).format(now);
+      } catch (e) {
+        return 'Desteklenmiyor';
+      }
+    }
+
+    function updateWorldClocks() {
+      document.getElementById("newyork").textContent = "New York: " + getTimeString("America/New_York");
+      document.getElementById("londra").textContent = "Londra: " + getTimeString("Europe/London");
+      document.getElementById("tokyo").textContent = "Tokyo: " + getTimeString("Asia/Tokyo");
+      document.getElementById("istanbul").textContent = "İstanbul: " + getTimeString("Europe/Istanbul");
+    }
+
+    updateWorldClocks();
+    setInterval(updateWorldClocks, 1000);
+  </script>
+
+</body>
+</html>
